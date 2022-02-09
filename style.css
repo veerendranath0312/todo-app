@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+  --bright-blue: hsl(220, 98%, 61%);
+  --bg-primary: hsl(235, 21%, 11%);
+  --bg-secondary: hsl(236, 14%, 21%);
+  --primary-color: hsl(234, 39%, 85%);
+  --secondary-color: #494c6b;
+  --check-background: linear-gradient(
+    130deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.dark-theme {
+  --bg-primary: hsl(0, 0%, 98%);
+  --bg-secondary: hsl(0, 0%, 98%);
+  --primary-color: hsl(235, 19%, 35%);
+  --secondary-color: hsl(233, 6%, 76%);
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image: url('./images/bg-desktop-dark.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 20px;
+}
+
+.container {
+  max-width: 567px;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+h1 {
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: 16px;
+}
+
+.icons {
+  cursor: pointer;
+}
+
+.hide-icon {
+  display: none;
+}
+
+form {
+  background: var(--bg-secondary);
+  width: 100%;
+  padding: 22px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+form input[type='radio'],
+.list-item-checkbox {
+  --webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 50%;
+  margin-right: 20px;
+  transform: translateY(-1px);
+}
+
+form input[type='text'] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 400;
+  flex-grow: 2;
+  caret-color: var(--bright-blue);
+}
+
+.todos-div {
+  background: var(--bg-secondary);
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.list-item-checkbox {
+  cursor: pointer;
+}
+
+.list-item-checkbox:hover {
+  border-color: var(--bright-blue);
+}
+
+.list-item-checkbox:checked {
+  background-image: url('./images/icon-check.svg'), var(--check-background);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.list-item-checkbox:checked ~ p {
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+
+.list-item p {
+  color: var(--primary-color);
+  flex-grow: 2;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cross-mark {
+  display: none;
+}
+
+.list-item:hover > .cross-mark {
+  display: block;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  color: var(--secondary-color);
+}
+
+.hide {
+  display: none;
+}
+
+.state {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+.state:hover {
+  color: var(--primary-color);
+}
+
+#state-all {
+  color: var(--bright-blue);
+}
+
+#state-all,
+#state-active {
+  margin-right: 10px;
+}
+
+.mobile-states {
+  background: var(--bg-secondary);
+  width: 100%;
+  padding: 18px;
+  display: none;
+  border-radius: 5px;
+  margin-top: 25px;
+  box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+@media (max-width: 414px) {
+  body {
+    background-image: url('./images/bg-mobile-dark.jpg');
+  }
+
+  .container {
+    margin-top: 30px;
+  }
+
+  form input[type='text'],
+  .list-item p,
+  .menu,
+  .state {
+    font-size: 15px;
+  }
+
+  .states {
+    display: none;
+  }
+
+  .mobile-states {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

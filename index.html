@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo app</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 id="logo">TODO</h1>
+        <div class="icons">
+          <img src="./images/icon-sun.svg" alt="sun-icon" id="day" />
+          <img
+            src="./images/icon-moon.svg"
+            alt="moon-icon"
+            id="night"
+            class="hide-icon"
+          />
+        </div>
+      </div>
+      <form action="">
+        <input type="radio" disabled="true" />
+        <input
+          type="text"
+          name="todo"
+          id="todo-input"
+          placeholder="Enter Todo"
+          autocomplete="off"
+        />
+      </form>
+
+      <div class="todos-div">
+        <div class="todo-list"></div>
+
+        <div class="menu">
+          <p><span id="items-count">5</span> items left</p>
+          <div class="states">
+            <button class="state" id="state-all">All</button>
+            <button class="state" id="state-active">Active</button>
+            <button class="state" id="state-completed">Completed</button>
+          </div>
+          <button class="state" id="clear-completed">Clear Completed</button>
+        </div>
+      </div>
+
+      <div class="mobile-states">
+        <button class="state" id="state-all">All</button>
+        <button class="state" id="state-active">Active</button>
+        <button class="state" id="state-completed">Completed</button>
+      </div>
+    </div>
+
+    <template>
+      <div class="list-item">
+        <input type="checkbox" class="list-item-checkbox" id="1" />
+        <p class="list-item-text">Complete online JavaScript course</p>
+        <img src="./images/icon-cross.svg" alt="" class="cross-mark" id="1" />
+      </div>
+    </template>
+  </body>
+</html>
